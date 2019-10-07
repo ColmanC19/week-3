@@ -2,30 +2,29 @@ $(document).ready(function() {
   $("form#BeepBoop").submit(function(event) {
     event.preventDefault();
 
-    var number = parseInt($("input#word").val());
-    var result = functionNumbers(number);
+      var number = $("#number").val();
+    var result = getResult(number);
 
-    $("#input").text(number);
+    $("#input").text(result);
     $("#result").show();
 
   });
 });
 
 
-var functionNumbers = function(number) {
-  var string = [];
+var getResult = function(number) {
+  var result = [];
   for (i = 0; i <= number; i++) {
     var iAsString = i.toString();
      if (iAsString.includes("3")) {
-      string.push("I'm sorry Dave. I'm afraid I can't do that!");
+      result.push("I'm sorry Dave. I'm afraid I can't do that!");
     } else if (iAsString.includes("2")) {
-    string.push("Boop!");
+    result.push("Boop!");
   } else if (iAsString.includes("1")) {
-      string.push("Beep");
+      result.push("Beep");
     } else {
-      string.push(" " + i);
+      result.push(" " + i);
     }
   }
-   console.log(string);
-
+   return result;
 }

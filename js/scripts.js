@@ -2,10 +2,10 @@ $(document).ready(function() {
   $("form#BeepBoop").submit(function(event) {
     event.preventDefault();
 
-      var number = $("#number").val();
+    var number = $("#number").val();
     var result = getResult(number);
 
-    $("#input").text(result);
+    $("#output").text(result);
     $("#result").show();
 
   });
